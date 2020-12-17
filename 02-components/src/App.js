@@ -8,11 +8,13 @@ function sayGoodbye() {
     return <h2>Time to say goodbye</h2>
 }
 
-function BorderedImageFrame(){
+function BorderedImageFrame(props){
     return (
-        <img style={{'border':'4px solid red'}} src={require('./pikachu.png').default}/>
+        <img style={{'border':'4px solid red'}} src={props.image}/>
     )
 }
+
+
 
 // 1. is a function
 // 2. first alphabet is uppercase
@@ -21,12 +23,25 @@ function ImageFrame(){
     return <img  src={require('./dog.gif').default}/>
 }
 
+function Alert(props) {
+    return (<div className="alert" style={{
+        'backgroundColor': props.bgcolor,
+        'padding': '10px',
+        'margin':'10px'
+    }}>
+<span className="message">{props.message}</span>
+    </div>
+    )
+}
+
 function App() {
   return (
    <React.Fragment>
         <h1>{sayHello()}</h1>
         {sayGoodbye()}
+        <Alert message="Hello there" bgcolor="orange" />
         <ImageFrame/>
+        <BorderedImageFrame image={require('./dog.gif').default}/>
         <BorderedImageFrame/>
    </React.Fragment>
 
