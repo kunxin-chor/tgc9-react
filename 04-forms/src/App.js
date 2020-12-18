@@ -1,10 +1,10 @@
 import React from 'react';
-import Form from './Form'
+import FormAdvanced from './FormAdvanced'
 
 function App() {
   return (
     <div className="App">
-      <Form/>
+      <FormAdvanced/>
     </div>
   );
 }
