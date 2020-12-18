@@ -6,7 +6,8 @@ export default class FormAdvanced extends React.Component {
     email: "",
     color: "",
     time: "morning",
-    fruits: []
+    fruits: [],
+    country: 'sg'
   };
 
   render() {
@@ -122,6 +123,15 @@ export default class FormAdvanced extends React.Component {
           />
           <label>Mango</label>
         </div>
+        <div>
+            <label>Country</label>
+            <select name="country" onChange={this.updateFormField} value={this.state.country}>
+                <option value="sg">Singapore</option>
+                <option value="my">Malaysia</option>
+                <option value="th">Thailand</option>
+            </select>
+        </div>
+
       </React.Fragment>
     );
   }
