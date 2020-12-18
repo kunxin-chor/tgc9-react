@@ -8,7 +8,7 @@ function App() {
     <div className="App">
         <Timer/>
         <Counter/>
-        <NumberBox startingNumber={42}/>
+        <NumberBox startingNumber={10}/>
         <ImageSwitcher/>
 
     </div>

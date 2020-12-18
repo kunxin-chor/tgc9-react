@@ -14,7 +14,10 @@ export default class NumberBox extends React.Component{
         return (
             <React.Fragment>
                 <div>
-                    <h1>{this.state.number}</h1>
+                    <h1 style={{
+                        'fontSize': `${10 + this.state.number * 5}px`
+                    }}>{this.state.number}</h1>
+                    {this.state.number % 2 === 0 ? <h2>Even</h2> : null}
                 </div>
                 <button onClick={this.increment}>Add 1</button>
             </React.Fragment>

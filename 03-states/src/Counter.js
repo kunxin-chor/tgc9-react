@@ -14,7 +14,8 @@ export default class Counter extends React.Component {
             'fontSize':'32px',
             'height':'60px',
             'wdith':'60px',
-            'padding':'30px'
+            'padding':'30px',
+            'backgroundColor': this.state.count % 2 ==0  ? 'green' : 'red'
         };
         return (
             <React.Fragment>
