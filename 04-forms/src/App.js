@@ -1,10 +1,10 @@
 import React from 'react';
-import FormAdvanced from './FormAdvanced'
+import SurveyForm from './SurveyForm'
 
 function App() {
   return (
     <div className="App">
-      <FormAdvanced/>
+      <SurveyForm/>
     </div>
   );
 }
