@@ -1,0 +1,17 @@
+ [
+    {
+      "id": 1,
+      "value": "zuma",
+      "title": "Zuma"
+    },
+    {
+      "id": 2,
+      "value": "yoga",
+      "title": "Yoga"
+    },
+    {
+      "id": 3,
+      "value": "shadow-boxing",
+      "title": "Shadow Boxing"
+    }
+  ]

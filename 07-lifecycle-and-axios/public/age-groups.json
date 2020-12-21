@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "value": "teens",
+    "title": "16 or younger"
+  },
+  {
+    "id": 2,
+    "value": "young-adults",
+    "title": "17 to 34"
+  },
+  {
+    "id": 3,
+    "value": "middle-age",
+    "title": "34 to 49"
+  },
+  {
+    "id": 4,
+    "value": "senior",
+    "title": "50 and older"
+  }
+]
