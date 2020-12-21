@@ -1,0 +1,55 @@
+{
+  "seatings": [
+    {
+      "id": 1,
+      "value": "indoors",
+      "title": "Indoor seatings"
+    },
+    {
+      "id": 2,
+      "value": "outdoors",
+      "title": "Outdoors seatings"
+    },
+    {
+      "id": 3,
+      "value": "vip-indoors",
+      "title": "VIP Indoor seatings"
+    }
+  ],
+
+  "smokingChoices": [
+    {
+      "id": 1,
+      "value": "smoking",
+      "title": "Smoking allowed"
+    },
+    {
+      "id": 2,
+      "value": "non-smoking",
+      "title": "Non-smoking"
+    }
+  ],
+
+  "appetizers": [
+    {
+      "id": 1,
+      "value": "raw-fishes",
+      "title": "Various sashmi"
+    },
+    {
+      "id": 2,
+      "value": "salad",
+      "title": "Mixed Salad"
+    },
+    {
+      "id": 3,
+      "value": "fried-cuttlefish",
+      "title": "Fried cuttlefish"
+    },
+    {
+      "id": 4,
+      "value": "peanuts",
+      "title": "Healthly Nuts Mix"
+    }
+  ]
+}

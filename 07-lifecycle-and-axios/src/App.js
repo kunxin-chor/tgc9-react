@@ -1,9 +1,9 @@
 // import BookingFormEx from './BookingFormEx'
-import Reservation from './Reservation'
+import ReservationEx from './ReservationEx'
 function App() {
   return (
     <div className="App">
-     <Reservation/>
+     <ReservationEx/>
     </div>
   );
 }
