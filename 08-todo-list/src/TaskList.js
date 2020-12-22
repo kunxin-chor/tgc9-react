@@ -44,7 +44,11 @@ export default class TaskList extends React.Component {
     return (
       <React.Fragment>
         <li>
-          {task.title} - {task.done ? "Completed" : "Incomplete"} (Due:
+          {task.title} - 
+          <input type="checkbox" checked={task.done} onChange={()=>{
+              this.updateTaskDone(task)
+          }}/> 
+          (Due:
           {task.date})
           <button
             onClick={() => {
@@ -249,4 +253,46 @@ export default class TaskList extends React.Component {
       ]
     });
   };
+
+//   updateTaskDone = task => {
+
+//       // 1. clone the object that you changing
+//       let clonedTask = {...task};
+
+//       // 2. change the clone
+//       // if the task is complete, then set it as incompleted
+//       if (clonedTask.done === true) {
+//           clonedTask.done = false;
+//       } else {
+//           clonedTask.done = true;
+//       }
+
+//       // 3. find the index of the original object in the array
+//       let index = this.state.tasks.findIndex( t => t._id == clonedTask._id);
+      
+//       // 4. clone the array
+//       let clonedArray = [...this.state.tasks];
+
+//       // 5. replace the original object in the array with the clone
+//       clonedArray[index] = clonedTask;
+
+//       // 6. set the cloned array into the state
+//       this.setState({
+//           tasks: clonedArray
+//       })
+//   }
+
+updateTaskDone = (task) => {
+    let index = this.state.tasks.findIndex( t => t._id == task._id);
+    this.setState({
+        tasks: [
+            ...this.state.tasks.slice(0, index),
+            {
+                ...task,
+                done: task.done ? false : true
+            },
+            ...this.state.tasks.slice(index+1)
+        ]
+    })
+}
 }
