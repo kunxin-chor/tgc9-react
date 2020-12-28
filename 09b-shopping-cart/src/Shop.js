@@ -20,11 +20,18 @@ export default class Shop extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div class="container">
+        <div className="container">
           <h1>My Shop</h1>
-          <Catalog products={this.state.products} />
+          <Catalog products={this.state.products}
+                   addToCart={this.addToCart}
+          />
         </div>
       </React.Fragment>
     );
+  }
+  addToCart = (product) => {
+      this.setState({
+          cartItems: [...this.state.cartItems, product]
+      })
   }
 }
