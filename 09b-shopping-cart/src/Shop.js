@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import Catalog from "./Catalog";
 
 export default class Shop extends React.Component {
   state = {
@@ -20,8 +21,8 @@ export default class Shop extends React.Component {
       return (
           <React.Fragment>
               <h1>My Shop</h1>
+              <Catalog products={this.state.products}/>
           </React.Fragment>
-
       )
   }
 }
