@@ -8,7 +8,7 @@ function renderProducts(products) {
       <React.Fragment>
         <div class="card" style={{width: '18rem'}}>
           <div class="card-body">
-            <img class="card-img-top" src={"dummy.jpg"} alt="Card image cap" />
+            <img class="card-img-top" src={p.imageUrl} alt="Card image cap" />
             <h5 class="card-title">{p.name}</h5>
             <div class="card-text">
                 <ul>
