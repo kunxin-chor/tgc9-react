@@ -18,11 +18,13 @@ export default class Shop extends React.Component {
     });
   }
   render() {
-      return (
-          <React.Fragment>
-              <h1>My Shop</h1>
-              <Catalog products={this.state.products}/>
-          </React.Fragment>
-      )
+    return (
+      <React.Fragment>
+        <div class="container">
+          <h1>My Shop</h1>
+          <Catalog products={this.state.products} />
+        </div>
+      </React.Fragment>
+    );
   }
 }
