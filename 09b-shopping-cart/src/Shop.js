@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import Catalog from "./Catalog";
-import CartItem from "./CartItem";
+import ShoppingCart from "./ShoppingCart"
 
 export default class Shop extends React.Component {
   state = {
@@ -26,6 +26,7 @@ export default class Shop extends React.Component {
           <Catalog products={this.state.products}
                    addToCart={this.addToCart}
           />
+          <ShoppingCart cartItems={this.state.cartItems}/>
         </div>
        
         
