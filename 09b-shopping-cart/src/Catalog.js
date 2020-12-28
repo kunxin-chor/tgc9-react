@@ -6,9 +6,22 @@ function renderProducts(products) {
   for (let p of products) {
     jsx.push(
       <React.Fragment>
-        <li>
-          {p.name} ({p.sku}) : ${p.price}
-        </li>
+        <div class="card" style={{width: '18rem'}}>
+          <div class="card-body">
+            <img class="card-img-top" src={"dummy.jpg"} alt="Card image cap" />
+            <h5 class="card-title">{p.name}</h5>
+            <div class="card-text">
+                <ul>
+                    <li>SKU: {p.sku}</li>
+                    <li>Price: {p.price}</li>
+                </ul>
+
+            </div>
+            <a href="#" class="btn btn-primary">
+              Add to Cart
+            </a>
+          </div>
+        </div>
       </React.Fragment>
     );
   }
@@ -17,7 +30,5 @@ function renderProducts(products) {
 }
 
 export default function Catalog(props) {
-  return <React.Fragment>
-      {renderProducts(props.products)}
-  </React.Fragment>;
+  return <React.Fragment>{renderProducts(props.products)}</React.Fragment>;
 }
