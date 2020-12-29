@@ -5,7 +5,9 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 function App() {
   return (
     <React.Fragment>
+        <div className="container">
         <Shop/>
+        </div>
     </React.Fragment>
 
   );

@@ -1,6 +1,7 @@
 import React, {useContext} from 'react'
 import ShopContext from './ShopContext'
 import Product from './Product'
+import AddNewProduct from './AddNewProduct'
 
 export default function Catalog() {
     const context = useContext(ShopContext);
@@ -13,7 +14,9 @@ export default function Catalog() {
                     sku={p.sku}
                     price={p.price}
                     id={p._id}
+                    addToCart={context.addToCart}
                 />)}
+            <AddNewProduct/>
     </React.Fragment>
 
 }
