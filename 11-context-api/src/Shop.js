@@ -1,5 +1,6 @@
 import React from 'react'
 import ShopContext from './ShopContext'
+import Catalog from './Catalog'
 import axios from 'axios'
 export default class Shop extends React.Component {
     state = {
@@ -20,6 +21,7 @@ export default class Shop extends React.Component {
                 <div className="container">
                     <h1>Welcome to our OnlineStore(tm)!</h1>
                 </div>
+                <Catalog/>
             </ShopContext.Provider>
 
         </React.Fragment>
