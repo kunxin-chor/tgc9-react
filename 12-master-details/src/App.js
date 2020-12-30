@@ -6,6 +6,7 @@ import "./App.css";
 import ProductListing from "./pages/ProductListing";
 import AddProduct from "./pages/AddProduct";
 import UpdateProduct from "./pages/UpdateProduct";
+import ProductContext from "./ProductContext"
 
 class App extends React.Component {
   state = {
@@ -35,7 +36,7 @@ class App extends React.Component {
             </ul>
           </nav>
 
-         
+          <ProductContext.Provider value={this.state}>  
           <Switch>
             <Route exact path="/">
               <ProductListing />
@@ -47,6 +48,7 @@ class App extends React.Component {
               <UpdateProduct />
             </Route>
           </Switch>
+          </ProductContext.Provider>
         </Router>
       </div>
     );
