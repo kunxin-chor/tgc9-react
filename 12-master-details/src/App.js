@@ -3,6 +3,9 @@ import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import ProductListing from "./pages/ProductListing";
+import AddProduct from "./pages/AddProduct";
+import UpdateProduct from "./pages/UpdateProduct";
 
 class App extends React.Component {
   state = {
@@ -16,7 +19,35 @@ class App extends React.Component {
 
   }
   render() {
-    return <div className="App"></div>;
+    return <div className="container">
+        <Router>
+            <nav>
+                <ul>
+                    <li>
+                        <Link to="/">Product Listing</Link>
+                    </li>
+                    <li>
+                        <Link to="/add_product">Add New</Link>
+                    </li>
+                    <li>
+                        <Link to="/edit_product">Edit</Link>
+                    </li>
+                </ul>
+
+            </nav>
+            <Switch>
+                <Route exact path="/">
+                    <ProductListing/>
+                </Route>
+                <Route exact path="/add_product">
+                    <AddProduct/>
+                </Route>
+                <Route exact path="/edit_product">
+                    <UpdateProduct/>
+                </Route>
+            </Switch>
+        </Router>
+    </div>;
   }
 }
 
