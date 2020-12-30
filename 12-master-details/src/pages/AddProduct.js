@@ -11,12 +11,22 @@ export default function AddProduct() {
 
   const context = useContext(ProductContext);
 
-  const updateFormField = (event) => {
-     setNewProduct({
-          ...newProduct,
-          [event.target.name] : event.target.value
-      })
-  }
+  const updateFormField = event => {
+    setNewProduct({
+      ...newProduct,
+      [event.target.name]: event.target.value
+    });
+  };
+
+  const processAddProduct = () => {
+    context.addNewProduct({ ...newProduct });
+    setNewProduct({
+      sku: "",
+      name: "",
+      price: 0,
+      imageUrl: ""
+    });
+  };
 
   return (
     <React.Fragment>
@@ -31,7 +41,7 @@ export default function AddProduct() {
           onChange={updateFormField}
         />
       </div>
-       <div>
+      <div>
         <label className="form-label">Name</label>
         <input
           type="text"
@@ -41,7 +51,7 @@ export default function AddProduct() {
           onChange={updateFormField}
         />
       </div>
-       <div>
+      <div>
         <label className="form-label">Price</label>
         <input
           type="text"
@@ -51,7 +61,7 @@ export default function AddProduct() {
           onChange={updateFormField}
         />
       </div>
-       <div>
+      <div>
         <label className="form-label">Image URL</label>
         <input
           type="text"
@@ -61,8 +71,9 @@ export default function AddProduct() {
           onChange={updateFormField}
         />
       </div>
-      <button className="btn btn-primary" onClick={()=>context.addNewProduct({...newProduct})
-      }>Add</button>
+      <button className="btn btn-primary" onClick={processAddProduct}>
+        Add
+      </button>
     </React.Fragment>
   );
 }
