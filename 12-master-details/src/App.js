@@ -7,6 +7,7 @@ import ProductListing from "./pages/ProductListing";
 import AddProduct from "./pages/AddProduct";
 import UpdateProduct from "./pages/UpdateProduct";
 import ProductContext from "./ProductContext"
+import ProductDetails from "./pages/ProductDetails";
 
 class App extends React.Component {
   state = {
@@ -54,6 +55,9 @@ class App extends React.Component {
             </Route>
             <Route exact path="/edit_product">
               <UpdateProduct />
+            </Route>
+            <Route exact path="/product_details/:product_id">
+              <ProductDetails/>
             </Route>
           </Switch>
           </ProductContext.Provider>

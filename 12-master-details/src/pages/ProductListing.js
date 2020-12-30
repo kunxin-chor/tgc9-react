@@ -1,5 +1,6 @@
 import React, {useContext} from 'react'
 import ProductContext from '../ProductContext'
+import {Link} from 'react-router-dom'
 
 export default function ProductListing() {
     const context = useContext(ProductContext);
@@ -24,7 +25,9 @@ export default function ProductListing() {
                         {p.sku}
                     </td>
                     <td>
-                        {p.name}
+                        <Link to={"/product_details/" + p._id}>
+                            {p.name}
+                        </Link>
                     </td>
                     <td>
                         {p.price}
