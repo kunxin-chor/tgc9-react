@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import ProductContext from "../ProductContext";
 
 export default function AddProduct() {
   const [newProduct, setNewProduct] = useState({
@@ -7,6 +8,8 @@ export default function AddProduct() {
     price: 0,
     imageUrl: ""
   });
+
+  const context = useContext(ProductContext);
 
   const updateFormField = (event) => {
      setNewProduct({
@@ -58,6 +61,8 @@ export default function AddProduct() {
           onChange={updateFormField}
         />
       </div>
+      <button className="btn btn-primary" onClick={()=>context.addNewProduct({...newProduct})
+      }>Add</button>
     </React.Fragment>
   );
 }

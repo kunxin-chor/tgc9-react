@@ -10,7 +10,15 @@ import ProductContext from "./ProductContext"
 
 class App extends React.Component {
   state = {
-    products: []
+    products: [],
+    addNewProduct:(p) => {
+        // add a new id to the product
+        p._id = Math.floor(Math.random() * 10000);
+        let cloned = [...this.state.products, p];
+        this.setState({
+            products: cloned
+        })
+    }
   };
   async componentDidMount() {
     let response = await axios.get("products.json");
