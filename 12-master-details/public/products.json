@@ -1,0 +1,23 @@
+[
+    {
+        "_id":1,
+        "sku":"ACME-001",
+        "name":"ACME Chainsaw",
+        "price": 120.50,
+        "imageUrl": "https://www.stihlusa.com/WebContent/Images/Product/1550/ms251.png?preset=Product.ProductDetails"
+    },
+    {
+        "_id":2,
+        "sku":"DRINK-002",
+        "name":"Diet Coke (1 can)",
+        "price": 0.90,
+        "imageUrl":"https://assets.sainsburys-groceries.co.uk/gol/2190976/1/640x640.jpg"
+    },
+    {
+        "_id":3,
+        "sku":"DYSON-0101",
+        "name":"Dyson Vaccum Cleaner",
+        "price": 700,
+        "imageUrl":"https://dyson-h.assetsadobe2.com/is/image/content/dam/dyson/leap-petite-global/markets/korea/products/floorcare/sticks/v10/variants/v10-fluffy/V10-fluffy-centre-image-hero-2.png?fmt=png-alpha&scl=1&fmt=png-alpha"
+    }
+]

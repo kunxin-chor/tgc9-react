@@ -2,6 +2,7 @@ import React from "react";
 import ShopContext from "./ShopContext";
 import Catalog from "./Catalog";
 import axios from "axios";
+import ShoppingCart from "./ShoppingCart";
 export default class Shop extends React.Component {
   state = {
     products: [],
@@ -19,9 +20,9 @@ export default class Shop extends React.Component {
       });
     },
     addNewProduct: newProduct => {
-        this.setState({
-            products: [...this.state.products, newProduct]
-        })
+      this.setState({
+        products: [...this.state.products, newProduct]
+      });
     }
   };
 
@@ -39,7 +40,14 @@ export default class Shop extends React.Component {
           <div className="container">
             <h1>Welcome to our OnlineStore(tm)!</h1>
           </div>
-          <Catalog />
+          <div class="row">
+            <div class="col">
+              <Catalog />
+            </div>
+            <div class="col">
+              <ShoppingCart />
+            </div>
+          </div>
         </ShopContext.Provider>
       </React.Fragment>
     );
