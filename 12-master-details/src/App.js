@@ -9,45 +9,47 @@ import UpdateProduct from "./pages/UpdateProduct";
 
 class App extends React.Component {
   state = {
-      products:[]
-  }  
-  async componentDidMount(){
-    let response = await axios.get('products.json');
+    products: []
+  };
+  async componentDidMount() {
+    let response = await axios.get("products.json");
     this.setState({
-        products: response.data
-    })
-
+      products: response.data
+    });
   }
   render() {
-    return <div className="container">
+    return (
+      <div className="container">
         <Router>
-            <nav>
-                <ul>
-                    <li>
-                        <Link to="/">Product Listing</Link>
-                    </li>
-                    <li>
-                        <Link to="/add_product">Add New</Link>
-                    </li>
-                    <li>
-                        <Link to="/edit_product">Edit</Link>
-                    </li>
-                </ul>
+          <nav className="navbar navbar-expand-sm bg-dark navbar-dark">
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <Link to="/" className="nav-link">Product Listing</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/add_product">Add New</Link>
+              </li>
+              <li className="nav-item">
+                 <Link className="nav-link" to="/edit_product">Edit</Link>
+              </li>
+            </ul>
+          </nav>
 
-            </nav>
-            <Switch>
-                <Route exact path="/">
-                    <ProductListing/>
-                </Route>
-                <Route exact path="/add_product">
-                    <AddProduct/>
-                </Route>
-                <Route exact path="/edit_product">
-                    <UpdateProduct/>
-                </Route>
-            </Switch>
+         
+          <Switch>
+            <Route exact path="/">
+              <ProductListing />
+            </Route>
+            <Route exact path="/add_product">
+              <AddProduct />
+            </Route>
+            <Route exact path="/edit_product">
+              <UpdateProduct />
+            </Route>
+          </Switch>
         </Router>
-    </div>;
+      </div>
+    );
   }
 }
 
