@@ -5,10 +5,10 @@ import ProductContext from '../ProductContext';
 
 export default function ProductDetails() {
     const params = useParams();
-    const productId = parseInt(params.product_id);
+    const productId = params.product_id;
     const context = useContext(ProductContext);
-    const product = context.products.find((p)=>p._id === productId);
-    console.log(product)
+    const product = context.findProduct(prodcutId);
+
 
     return <React.Fragment>
         <h1>Product Details</h1>

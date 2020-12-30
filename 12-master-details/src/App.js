@@ -19,10 +19,23 @@ class App extends React.Component {
         this.setState({
             products: cloned
         })
+    },
+    findProduct:(productId) => {
+
+        return this.state.products.find(p => p._id === parseInt(productId));
+    },
+    updateProduct:(product) => {
+        const index = this.state.products.findIndex(p => p._id === product._id);
+        this.setState({
+            products: [...this.state.products.slice(0, index),
+                       product,
+                       ...this.state.products.slice(index+1)
+            ]
+        })
     }
   };
   async componentDidMount() {
-    let response = await axios.get("products.json");
+    let response = await axios.get("/products.json");
     this.setState({
       products: response.data
     });
@@ -39,9 +52,6 @@ class App extends React.Component {
               <li className="nav-item">
                 <Link className="nav-link" to="/add_product">Add New</Link>
               </li>
-              <li className="nav-item">
-                 <Link className="nav-link" to="/edit_product">Edit</Link>
-              </li>
             </ul>
           </nav>
 
@@ -53,7 +63,7 @@ class App extends React.Component {
             <Route exact path="/add_product">
               <AddProduct />
             </Route>
-            <Route exact path="/edit_product">
+            <Route exact path="/edit_product/:product_id">
               <UpdateProduct />
             </Route>
             <Route exact path="/product_details/:product_id">

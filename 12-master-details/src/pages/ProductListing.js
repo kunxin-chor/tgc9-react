@@ -17,6 +17,7 @@ export default function ProductListing() {
                 <th>
                     Price
                 </th>
+                <th></th>
             </tr>
 
             {context.products.map(p=>(
@@ -32,6 +33,10 @@ export default function ProductListing() {
                     <td>
                         {p.price}
                     </td>
+                    <td>
+                        <Link className="btn btn-primary" to={'/edit_product/' + p._id}>Edit</Link>
+                    </td>
+
                 </tr>
 
             ))}
